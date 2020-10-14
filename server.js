@@ -69,7 +69,7 @@ const usersDatabase = [
  */
 
 app.get('/', (req, res) => {
-    res.send('Welcome to MarketSpace666!')
+    res.send('Welcome to MarketSpace!')
 })
 
 
