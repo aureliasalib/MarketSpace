@@ -4,6 +4,13 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 
 describe('Items operations', function(){
+    before(function() {
+       server.start(); 
+    });
+
+    after(function() {
+        server.stop();
+    });
     describe('Read items', function(){
         it('should respond an array of items', async function(){
         await chai.request('http://localhost:3000')
@@ -82,6 +89,13 @@ describe('Items operations', function(){
 
 
 describe('User operations', function(){
+    before(function() {
+        server.start(); 
+     });
+ 
+     after(function() {
+         server.stop();
+     });
     describe('Login', function(){
         it('should respond the authentification of the user', async function(){
         await chai.request('http://localhost:3000')
