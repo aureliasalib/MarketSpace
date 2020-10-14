@@ -215,7 +215,7 @@ Create a new item
 
 app.post('/items', passport.authenticate('jwt', {
     session: false
-}), imageUpload.array('images', 4),
+}),
 (req, res) => {
 
     // If one of the required parameters is empty, send a bad-request response
@@ -264,7 +264,7 @@ Edit an existing item
  */
 app.put('/items/:itemId', passport.authenticate('jwt', {
     session: false
-}),imageUpload.array('images', 4),
+}),
 (req, res) => {
 
     let oldItemBody = itemsDatabase.getItemByItemId(req.params.itemId);
